@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twimba</title>
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="./images/Favicon.png" type="image/x-icon">
+    <!-- Css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JS link -->
+    <script type="module" src="app.js" defer></script>
+</head>
+
+<body class="flex">
+
+    <main id="app" class="app">
+        <section class="head flex">
+            <img src="./images/Logo.png" alt="App Logo" class="logo">
+            <h1 class="title">Twimba</h1>
+        </section>
+
+        <section class="new-tweet-section">
+            <img src="./images/Favicon.png" class="img">
+            <textarea name="new-tweet" id="new-tweet" class="new-tweet"
+                placeholder="What's happening? Double Click to create new user for your Tweet"></textarea>
+
+            <button class="tweet-btn" id="tweet-btn">Tweet</button>
+        </section>
+
+        <section class="create-new-user-section none">
+            <form class="create-new-user flex">
+                <input type="text" name="new-user-name" id="new-user-name" placeholder="User Name" class="new-user-name"
+                    required>
+
+                <div class="radios">
+                    <p>Your account is verified ?</p>
+
+                    <div class="radio-container">
+                        <input type="radio" value="is-verified" id="is-verified" name="ver-radio" class="radio">
+                        <label for="is-verified">Verified</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="not-verified" id="not-verified" name="ver-radio" class="radio">
+                        <label for="not-verified">Not Verified</label>
+                    </div>
+                </div>
+
+                <div class="radios">
+                    <p>Pick an image</p>
+
+                    <div class="radio-container">
+                        <input type="radio" value="homer" id="homer" name="img-radio" class="radio">
+
+                        <label for="homer">Homer Simpson</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="bart" id="bart" name="img-radio" class="radio">
+
+                        <label for="bart">Bart Simpson</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="adam" id="adam" name="img-radio" class="radio">
+
+                        <label for="adam">Adam West</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="peter" id="peter" name="img-radio" class="radio">
+
+                        <label for="peter">Peter Griffon</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="lois" id="lois" name="img-radio" class="radio">
+
+                        <label for="lois">Lois Griffon</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="glen" id="glen" name="img-radio" class="radio">
+
+                        <label for="glen">Glen Quagmire</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="male" id="male" name="img-radio" class="radio">
+
+                        <label for="male">Male AI</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <input type="radio" value="female" id="female" name="img-radio" class="radio">
+
+                        <label for="female">Female AI</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="submit-btn">Submit</button>
+            </form>
+        </section>
+
+        <section class="body" id="body"></section>
+
+        <!-- --------- Tweet boilerplate ------ -->
+
+        <!-- <div class="tweet flex">
+            <img src="./images/musk.png" class="user-img">
+            <h5 class="user-name flex">
+                @Elon
+                <img src="./images/Verified_Badge.svg.png" class="verified-user true">
+            </h5>
+            <p class="user-tweet">
+                I need volunteers for a one-way mission to Mars 🪐. No experience necessary🚀
+            </p>
+            <div class="icons-container flex">
+                <i class="fa-regular fa-comment-dots fa-solid">
+                    <span class="comment-value">2</span>
+                </i>
+
+                <i class="fa-regular fa-heart fa-solid">
+                    <span class="like-value">6500</span>
+                </i>
+
+                <i class="fa-solid fa-retweet retweeted">
+                    <span class="retweet-value">234</span>
+                </i>
+            </div>
+
+            <div class="replies flex">
+
+                <div class="reply flex">
+                    <img src="./images/tcruise.png" class="user-img">
+                    <h5 class="user-name flex">
+                        @TomCruise
+                        <img src="./images/Verified_Badge.svg.png" class="verified-user true">
+                    </h5>
+                    <p class="user-tweet">
+                        Yes! Sign me up! bebeeeh 😎🛩
+                    </p>
+                </div>
+
+                <div class="new-reply-container flex">
+                    <textarea class="new-reply" id="new-reply" placeholder="Reply..."></textarea>
+
+                    <button class="reply-btn" data-reply-btn="reply-btn">Reply</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- ------------ Rewteet boilerplate -------------- -->
+
+        <!-- <div class="tweet flex">
+            <img src="./images/Dan-abramov.jpg" class="user-img">
+            <h5 class="user-name flex">
+                @DannyBoi
+                <img src="./images/Verified_Badge.svg.png" class="verified-user true">
+            </h5>
+
+            <div class="retweet-post flex">
+                <img src="./images/musk.png" class="user-img">
+                <h5 class="user-name flex">
+                    @Elon
+                    <img src="./images/Verified_Badge.svg.png" class="verified-user true">
+                </h5>
+
+                <p class="user-tweet">
+                    I need volunteers for a one-way mission to Mars 🪐
+                </p>
+            </div>
+
+            <div class="icons-container flex">
+                <i class="fa-regular fa-comment-dots">
+                    <span class="comment-value">0</span>
+                </i>
+
+                <i class="fa-regular fa-heart ">
+                    <span class="like-value">9207</span>
+                </i>
+
+                <i class="fa-solid fa-retweet">
+                    <span class="retweet-value">534</span>
+                </i>
+            </div>
+
+            <div class="replies flex"></div>
+
+        </div> -->
+
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/53af5e9bb6.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --peek-col: #FDFD66;
+    --blue-col: #00ADEF;
+    --light-blue: #9DD7E9;
+
+    --light-col: #fefae0;
+    --dark-col: #264653;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--dark-col);
+    min-height: 100vh;
+    user-select: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.app {
+    max-width: 400px;
+    width: 390px;
+    border: 5px solid #000;
+    border-radius: 15px;
+    padding: 2rem;
+    background: var(--light-blue);
+    overflow: hidden;
+}
+
+.head {
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #999;
+}
+
+.logo {
+    width: 50px;
+}
+
+.title {
+    color: var(--blue-col);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.new-tweet-section {
+    display: grid;
+    grid-template-areas:
+        'I T'
+        'B B'
+    ;
+    align-items: start;
+    justify-content: center;
+
+    padding: 1rem 0;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.img {
+    grid-area: I;
+    width: 45px;
+}
+
+.new-tweet {
+    grid-area: T;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 200px;
+    min-height: 70px;
+    font-weight: 600;
+    background: var(--light-col);
+}
+
+.tweet-btn {
+    grid-area: B;
+    height: 38px;
+    width: 270px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: var(--light-col);
+    background: var(--blue-col);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ----------------------- Tweet ----------------- */
+
+.tweet {
+    border-top: 2px solid #999;
+    position: relative;
+    flex-direction: column;
+    align-items: start;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0 1rem 3.5rem;
+
+}
+
+.user-img {
+    width: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 17px;
+    left: 0;
+}
+
+.delete-btn {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--blue-col);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    right: 5px;
+    top: 17px;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--light-col);
+    cursor: pointer;
+    line-height: 5px;
+}
+
+.user-name {
+    font-size: .8rem;
+}
+
+.verified-user {
+    width: 14px;
+    margin-left: 5px;
+    display: none;
+}
+
+.verified-user.true {
+    display: inline;
+}
+
+.user-tweet {
+    margin-block: 10px;
+    font-size: .8rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.icons-container {
+    width: 80%;
+    justify-content: space-between;
+    font-size: .9rem;
+    color: #000;
+}
+
+.fa-comment-dots.fa-solid {
+    color: #fefae0;
+    -webkit-text-stroke-color: transparent;
+}
+
+.fa-heart.fa-solid {
+    color: rgb(187, 0, 0);
+    -webkit-text-stroke-color: transparent;
+}
+
+.fa-retweet.retweeted {
+    color: limegreen;
+    -webkit-text-stroke-color: transparent;
+}
+
+i {
+    cursor: pointer;
+    -webkit-text-stroke: 0.5px black;   
+}
+
+.comment-value,
+.like-value,
+.retweet-value {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+    top: -1px;
+    -webkit-text-stroke-color: transparent;
+}
+
+.replies {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 1rem;
+}
+
+.replies.show {
+    display: flex;
+}
+
+.reply {
+    position: relative;
+    border-top: 2px solid #999;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    align-items: start;
+    padding: 1rem 0 1rem 3.5rem;   
+}
+
+.new-reply-container {
+    flex-direction: column;
+    width: 100%;
+}
+
+.new-reply {
+    width: 100%;
+    height: 50px;
+    resize: none;
+    border-radius: 5px;
+    background: var(--light-col);
+    border: none;
+    outline: none;
+    margin-bottom: 0.3rem;
+    padding: 5px 10px;
+}
+
+.reply-btn {
+    width: 100%;
+    background: var(--blue-col);
+    border: none;
+    border-radius: 20px;
+    height: 25px;
+    color: #fefae0;  
+    cursor: pointer; 
+}
+
+
+/* ----------- Create New user ----------- */
+
+.create-new-user-section {
+    position: relative;
+    width: 100%;
+}
+
+.none {
+    display: none;
+}
+
+.create-new-user {
+    position: absolute;
+    background: var(--dark-col);
+    z-index: 10;
+    color: #fefae0;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.new-user-name {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 600;
+    outline: none;
+    padding-block: 2px;
+}
+
+.radios {
+    margin-block: 5px 8px;
+}
+
+.radios p {
+    font-size: 13px;
+    font-weight: 700;
+    padding-left: 2px;
+    margin-block: 8px 3px;
+}
+
+.radio-container {
+    padding-left: .8rem;
+}
+
+.radio-container label{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    bottom: 2px;
+    color: #00ADEF;
+    cursor: pointer;
+}
+
+.radio {
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    border-radius: 20px;
+    background: var(--blue-col);
+    outline: none;
+    border: none;
+    color: var(--light-col);
+    padding-block: 2px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* -------------Retweet----------- */
+
+.retweet-post {
+    background: var(--light-col);
+    padding: 8px 5px 5px 48px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin: 10px 0;
+}
+
+.retweet-post .user-img {
+    position: absolute;
+    width: 35px;
+    top: 7.5px;
+    left: 5px;
+}
+
+.retweet-post .verified-user {
+   width: 9px;
+}
+
+.retweet-post .user-name {
+    font-size: .7rem;
+}
+
+.retweet-post .user-tweet {
+    font-size: .6rem;
+    margin-block: 4px 0;
+}
